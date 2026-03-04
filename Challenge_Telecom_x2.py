@@ -105,7 +105,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     stratify=y
 )
 
-# SMOTE (BALANCEO)
+# SMOTE BALANCEO
 print("Distribución original:")
 print(y_train.value_counts())
 
@@ -127,7 +127,7 @@ modelo_log.fit(X_train_scaled, y_train_res)
 y_pred_log = modelo_log.predict(X_test_scaled)
 y_prob_log = modelo_log.predict_proba(X_test_scaled)[:,1]
 
-print("\n===== REGRESIÓN LOGÍSTICA =====")
+print("\n REGRESIÓN LOGÍSTICA.")
 print("Accuracy:", accuracy_score(y_test, y_pred_log))
 print("AUC:", roc_auc_score(y_test, y_prob_log))
 print(classification_report(y_test, y_pred_log))
